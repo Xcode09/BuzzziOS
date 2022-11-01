@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct BuzzzApp: App {
+    @ObservedObject var playerViewModel = PlayerViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PlayerView().environmentObject(playerViewModel)
         }
     }
 }
