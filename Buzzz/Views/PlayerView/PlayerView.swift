@@ -144,24 +144,11 @@ struct PlayerView: View {
         )
         .background(
             VStack {
-                if showBackgroundImage {
-                    if "\(playerViewModel.station.title) 1" == "Local Sounds Lismore 1" {
-                        Image("\(playerViewModel.station.title) 1")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .edgesIgnoringSafeArea(.all)
-                    }else{
-                        Image("\(playerViewModel.station.title) 1")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .edgesIgnoringSafeArea(.all)
-                            .opacity(0.3)
-                    }
-                    
-                        
-                } else {
-                    AnyView(Color.clear)
-                }
+                Image("bg")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+                    .opacity(0.3)
             }
         )
         .onAppear {
