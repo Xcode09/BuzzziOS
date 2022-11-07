@@ -19,10 +19,10 @@ let adMobBannerID = ""
 // ----------------------------------------------------------------------------------------------
 
 // STATION
-let station_title = "Buzzz"
+let station_title = "the buzzz"
 let station_streamURL = "http://c22.radioboss.fm:8205/stream"
 
-let station_desc = "Better Music for Buzzz"
+let station_desc = "Classic Hits from the 70s and 80s!"
 
 // ----------------------------------------------------------------------------------------------
 // MARK: MAIN Screen
@@ -82,16 +82,18 @@ let whatsapp_number = ""
 
 // About Us
 let about_us_text = """
-The Buzzz is Melbourne’s Home of Classic Hits! The station launched in 2016 as purely a 70s and 80s music platform, and has since grown to include a quality team of on-air announcers, a true connection to a local audience, and a super cool A-Z playlist of classic tracks you can sing along to – from ABBA to ZZ Top!
+The Buzzz is Melbourne’s Home of Classic Hits!
 
-The station can be accessed via www.thebuzzz.com.au; the Buzzz app; myTuner; TuneIn; Apple CarPlay; Sonos and other smart speakers.
+The station launched in 2016 as purely a 70s and 80s music platform, and has since grown to include a quality team of on-air announcers, a true connection to a local audience, and a super cool A-Z playlist of classic tracks you can sing along to – from ABBA to ZZ Top.
+
+The station can be accessed via www.thebuzzz.com.au; the buzzz app; myTuner; TuneIn; Apple CarPlay; Sonos and other Smart Speakers.
 """
 // ----------------------------------------------------------------------------------------------
 
 // MARK: - TEXTS
 // MARK: Texts in About Us Screen
-let aboutSocialLinksText = "Social Links"
-let aboutUsText = "About Us"
+let aboutSocialLinksText = "CONNECT WITH ME"
+let aboutUsText = "ABOUT THE BEE"
 
 // MARK: Texts in Sleep Timer Screen
 let sleepTimerText = "Sleep Timer"

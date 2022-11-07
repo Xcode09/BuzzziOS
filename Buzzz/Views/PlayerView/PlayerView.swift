@@ -48,7 +48,7 @@ struct PlayerView: View {
                     // MARK: Radio Station Name
                     // config file: station_title
                     Text(playerViewModel.station.title)
-                        .font(.system(.headline, design: .rounded))
+                        .font(.system(.headline, design: .default))
                         .fontWeight(.semibold)
                         .padding(.horizontal, 10)
                         .multilineTextAlignment(.center)
@@ -56,7 +56,7 @@ struct PlayerView: View {
                     // MARK: Radio Station Description
                     // config file: station_desc
                     Text(playerViewModel.station.desc)
-                        .font(.system(.caption, design: .rounded))
+                        .font(.system(.caption, design: .default))
                         .fontWeight(.light)
                         .padding(.horizontal, 10)
                         .multilineTextAlignment(.center)
@@ -74,7 +74,7 @@ struct PlayerView: View {
                 }
                 // MARK: Song Title
                 Text(self.playerViewModel.track.metaTitle())
-                    .font(.system(.body, design: .rounded))
+                    .font(.system(.body, design: .default))
                     .fontWeight(.light)
                 
 //                // MARK: Radio Station Name
