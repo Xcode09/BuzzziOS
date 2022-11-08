@@ -105,9 +105,11 @@ struct PlayerView: View {
                     
                 
                 HStack(alignment: .center, spacing: 40) {
-                    ShareButton(size: 30)
+                    //ShareButton(size: 30)
                     
 //                }
+                    Spacer().frame(width: 30)
+                    
                     // MARK: Pause/Resume
                     if(playerViewModel.isLoading) {
                         ActivityIndicator()
@@ -144,7 +146,7 @@ struct PlayerView: View {
         )
         .background(
             VStack {
-                Image("bg")
+                Image("bg1")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
