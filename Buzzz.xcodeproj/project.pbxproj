@@ -13,6 +13,9 @@
 		D06C3CA92913D76B004ACB1E /* CarPlayApplicationSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06C3CA82913D76B004ACB1E /* CarPlayApplicationSceneDelegate.swift */; };
 		D06C3CAC2913D914004ACB1E /* CarPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06C3CAB2913D913004ACB1E /* CarPlay.framework */; };
 		D06C3CAE2913D97F004ACB1E /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = D06C3CAD2913D97F004ACB1E /* Entitlements.plist */; };
+		D08F9096291D408F000225C2 /* BuzzzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F9095291D408F000225C2 /* BuzzzUITests.swift */; };
+		D08F9098291D408F000225C2 /* BuzzzUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F9097291D408F000225C2 /* BuzzzUITestsLaunchTests.swift */; };
+		D08F90A1291D43D9000225C2 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08F90A0291D43D9000225C2 /* SnapshotHelper.swift */; };
 		D0BD585D29112E2400E77EA2 /* BuzzzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BD585C29112E2400E77EA2 /* BuzzzApp.swift */; };
 		D0BD585F29112E2400E77EA2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BD585E29112E2400E77EA2 /* ContentView.swift */; };
 		D0BD586129112E2600E77EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0BD586029112E2600E77EA2 /* Assets.xcassets */; };
@@ -38,6 +41,16 @@
 		D0BD58992911344500E77EA2 /* StationViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BD58982911344500E77EA2 /* StationViewRow.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D08F9099291D408F000225C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0BD585129112E2400E77EA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0BD585829112E2400E77EA2;
+			remoteInfo = Buzzz;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		D066942629118E4600A521F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D06694272911920200A521F6 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -46,6 +59,10 @@
 		D06C3CA82913D76B004ACB1E /* CarPlayApplicationSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayApplicationSceneDelegate.swift; sourceTree = "<group>"; };
 		D06C3CAB2913D913004ACB1E /* CarPlay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CarPlay.framework; path = System/Library/Frameworks/CarPlay.framework; sourceTree = SDKROOT; };
 		D06C3CAD2913D97F004ACB1E /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		D08F9093291D408F000225C2 /* BuzzzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuzzzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D08F9095291D408F000225C2 /* BuzzzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuzzzUITests.swift; sourceTree = "<group>"; };
+		D08F9097291D408F000225C2 /* BuzzzUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuzzzUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D08F90A0291D43D9000225C2 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		D0BD585929112E2400E77EA2 /* Buzzz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buzzz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BD585C29112E2400E77EA2 /* BuzzzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuzzzApp.swift; sourceTree = "<group>"; };
 		D0BD585E29112E2400E77EA2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +89,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D08F9090291D408F000225C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D0BD585629112E2400E77EA2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -101,10 +125,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D08F9094291D408F000225C2 /* BuzzzUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D08F90A0291D43D9000225C2 /* SnapshotHelper.swift */,
+				D08F9095291D408F000225C2 /* BuzzzUITests.swift */,
+				D08F9097291D408F000225C2 /* BuzzzUITestsLaunchTests.swift */,
+			);
+			path = BuzzzUITests;
+			sourceTree = "<group>";
+		};
 		D0BD585029112E2400E77EA2 = {
 			isa = PBXGroup;
 			children = (
 				D0BD585B29112E2400E77EA2 /* Buzzz */,
+				D08F9094291D408F000225C2 /* BuzzzUITests */,
 				D0BD585A29112E2400E77EA2 /* Products */,
 				D06C3CAA2913D913004ACB1E /* Frameworks */,
 			);
@@ -114,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				D0BD585929112E2400E77EA2 /* Buzzz.app */,
+				D08F9093291D408F000225C2 /* BuzzzUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -235,6 +271,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D08F9092291D408F000225C2 /* BuzzzUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D08F909D291D408F000225C2 /* Build configuration list for PBXNativeTarget "BuzzzUITests" */;
+			buildPhases = (
+				D08F908F291D408F000225C2 /* Sources */,
+				D08F9090291D408F000225C2 /* Frameworks */,
+				D08F9091291D408F000225C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D08F909A291D408F000225C2 /* PBXTargetDependency */,
+			);
+			name = BuzzzUITests;
+			productName = BuzzzUITests;
+			productReference = D08F9093291D408F000225C2 /* BuzzzUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		D0BD585829112E2400E77EA2 /* Buzzz */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0BD586729112E2600E77EA2 /* Build configuration list for PBXNativeTarget "Buzzz" */;
@@ -265,6 +319,10 @@
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					D08F9092291D408F000225C2 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = D0BD585829112E2400E77EA2;
+					};
 					D0BD585829112E2400E77EA2 = {
 						CreatedOnToolsVersion = 14.0;
 					};
@@ -287,11 +345,19 @@
 			projectRoot = "";
 			targets = (
 				D0BD585829112E2400E77EA2 /* Buzzz */,
+				D08F9092291D408F000225C2 /* BuzzzUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D08F9091291D408F000225C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D0BD585729112E2400E77EA2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -305,6 +371,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D08F908F291D408F000225C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D08F9098291D408F000225C2 /* BuzzzUITestsLaunchTests.swift in Sources */,
+				D08F9096291D408F000225C2 /* BuzzzUITests.swift in Sources */,
+				D08F90A1291D43D9000225C2 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D0BD585529112E2400E77EA2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -338,7 +414,49 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D08F909A291D408F000225C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0BD585829112E2400E77EA2 /* Buzzz */;
+			targetProxy = D08F9099291D408F000225C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		D08F909B291D408F000225C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 535756UG9P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOSAPP.BuzzzUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Buzzz;
+			};
+			name = Debug;
+		};
+		D08F909C291D408F000225C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 535756UG9P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOSAPP.BuzzzUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Buzzz;
+			};
+			name = Release;
+		};
 		D0BD586529112E2600E77EA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -460,13 +578,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"Buzzz/Preview Content\"";
 				DEVELOPMENT_TEAM = 535756UG9P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Buzzz/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Buzzz;
+				INFOPLIST_KEY_CFBundleDisplayName = "the buzzz";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -493,13 +611,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"Buzzz/Preview Content\"";
 				DEVELOPMENT_TEAM = 535756UG9P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Buzzz/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Buzzz;
+				INFOPLIST_KEY_CFBundleDisplayName = "the buzzz";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -522,6 +640,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D08F909D291D408F000225C2 /* Build configuration list for PBXNativeTarget "BuzzzUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D08F909B291D408F000225C2 /* Debug */,
+				D08F909C291D408F000225C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D0BD585429112E2400E77EA2 /* Build configuration list for PBXProject "Buzzz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

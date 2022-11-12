@@ -67,12 +67,14 @@ let shareURL: String = "" /// You can update this link with your App Store link
 let showAboutUsFeature = true
 
 // Social Links
-let station_website = "www.thebuzzz.com.au"
-let station_email = "thebuzzzaustralia@gmail.com" //lismore@localsounds.com.au"
+let station_website = "https://thebuzzz.com.au"
+let station_email = "thebuzzzaustralia@gmail.com"
 let youtube_username = ""
 let facebook_profile_id = "https://facebook.com/thebuzzzradioonline"
-//"https://www.facebook.com/localsoundsradio" //"111802411395708" /// You can use https://findmyfbid.com/ to find the Facebook Profile ID
+
 let instagram_username = "buzzz.radio"
+
+
 let twitter_username = "LocalSounds"
 let whatsapp_number = ""
 
@@ -91,8 +93,9 @@ The station can be accessed via www.thebuzzz.com.au; the buzzz app; myTuner; Tun
 // ----------------------------------------------------------------------------------------------
 
 // MARK: - TEXTS
+
 // MARK: Texts in About Us Screen
-let aboutSocialLinksText = "CONNECT WITH ME"
+let aboutSocialLinksText = "CONNECT WITH THE BEE"
 let aboutUsText = "ABOUT THE BEE"
 
 // MARK: Texts in Sleep Timer Screen

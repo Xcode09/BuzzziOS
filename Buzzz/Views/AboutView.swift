@@ -19,9 +19,9 @@ struct AboutView: View {
                         .scaledToFit()
                         .frame(width: 200, height: 100, alignment: .center)
                         .shadow(color: Color("ColorBlackTransparentLight"), radius: 8, x: 0, y: 4)
-                    Text("About The Bee".uppercased())
-                        .font(.system(.title, design: .rounded))
-                        .fontWeight(.bold)
+//                    Text("About The Bee".uppercased())
+//                        .font(.system(.title, design: .rounded))
+//                        .fontWeight(.bold)
                 }
                 .padding()
                 
@@ -115,7 +115,7 @@ struct AboutView: View {
                         }
                     }
                     
-                    Section(header: Text(aboutUsText)) {
+                    Section {
                         Text(about_us_text)
                         
                     }
