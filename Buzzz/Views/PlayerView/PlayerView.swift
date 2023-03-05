@@ -21,22 +21,29 @@ struct PlayerView: View {
             VStack(alignment: .center, spacing: 10) {
                         
                 // MARK: Album Logo Section
-                if (self.playerViewModel.track.artworkURL != nil) {
-                    ImageLoaderView(imageUrl: self.playerViewModel.track.artworkURL!)
-                        .frame(width: artworkSize, height: artworkSize, alignment: .center)
-                    .background(
-                        Circle()
-                            .fill(Color("ColorOffWhiteAdaptive"))
-                            .shadow(color: Color("ColorOffWhiteShadowFinishAdaptive"), radius: 10, x: 10, y: 10)
-                            
-                    )
-                } else {
-                    Image("logo")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: artworkSize, height: artworkSize, alignment: .center)
-                        .modifier(LogoModifier())
-                }
+                Image("logo")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: artworkSize, height: artworkSize, alignment: .center)
+                    .modifier(LogoModifier())
+                
+                
+//                if (self.playerViewModel.track.artworkURL != nil) {
+//                    ImageLoaderView(imageUrl: self.playerViewModel.track.artworkURL!)
+//                        .frame(width: artworkSize, height: artworkSize, alignment: .center)
+//                    .background(
+//                        Circle()
+//                            .fill(Color("ColorOffWhiteAdaptive"))
+//                            .shadow(color: Color("ColorOffWhiteShadowFinishAdaptive"), radius: 10, x: 10, y: 10)
+//
+//                    )
+//                } else {
+//                    Image("logo")
+//                        .resizable()
+//                        .scaledToFill()
+//                        .frame(width: artworkSize, height: artworkSize, alignment: .center)
+//                        .modifier(LogoModifier())
+//                }
                 
                 VStack{
                     HStack{

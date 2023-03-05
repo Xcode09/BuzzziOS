@@ -22,7 +22,10 @@ let adMobBannerID = ""
 let station_title = "the buzzz"
 let station_streamURL = "http://c22.radioboss.fm:8205/stream"
 
-let station_desc = "Classic Hits from the 70s and 80s!"
+let station_desc = "Classic Hits Radio."
+
+
+
 
 // ----------------------------------------------------------------------------------------------
 // MARK: MAIN Screen

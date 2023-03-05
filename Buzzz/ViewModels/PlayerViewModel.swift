@@ -125,11 +125,18 @@ final class PlayerViewModel: NSObject, ObservableObject {
         nowPlayingInfo[MPMediaItemPropertyArtist] = track.artist
 
         nowPlayingInfo[MPNowPlayingInfoPropertyIsLiveStream] = false
-        if let image = track.artworkImage {
-            nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: image.size, requestHandler: { size -> UIImage in
-                return image
-            })
-        }
+        
+        
+//        if let image = track.artworkImage {
+//            nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: image.size, requestHandler: { size -> UIImage in
+//                return image
+//            })
+//        }
+        nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: CGSize(width: 100, height: 100), requestHandler: { size -> UIImage in
+            return UIImage(named: "logo")!
+        })
+        
+        
         // Set the metadata
         MPNowPlayingInfoCenter.default().playbackState = .playing
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
