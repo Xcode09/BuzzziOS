@@ -20,7 +20,7 @@ let adMobBannerID = ""
 
 // STATION
 let station_title = "the buzzz"
-let station_streamURL = "http://c22.radioboss.fm:8205/stream"
+let station_streamURL = "https://c22.radioboss.fm/playlist/205/stream.m3u"
 
 let station_desc = "Classic Hits Radio."
 
@@ -87,18 +87,22 @@ let whatsapp_number = ""
 
 // About Us
 let about_us_text = """
-The Buzzz is Melbourne’s Home of Classic Hits!
+The buzz is Melbourne's home for classic hits from the 70s, 80s & 90s.
 
-The station launched in 2016 as purely a 70s and 80s music platform, and has since grown to include a quality team of on-air announcers, a true connection to a local audience, and a super cool A-Z playlist of classic tracks you can sing along to – from ABBA to ZZ Top.
+A member of B Radio Network, the largest radio station network in Australia, we stream the iconic sounds 24/7 of Queen, ABBA, the Stones, Kiss, Skyhooks and the Eagles from the 70s;
+Springsteen, Madonna, Huey & his News, The Purple One and Billy Idol from the decade simply known as "the 80s"; and the unmistakeable sounds of the 90s - think
+*Radiohead, Ace of Base, Foo Fighters, Goo Goo Dolls, Spin Doctors and Matchbox 20!
 
-The station can be accessed via www.thebuzzz.com.au; the buzzz app; myTuner; TuneIn; Apple CarPlay; Sonos and other Smart Speakers.
+Thanks for buzzing on by!
+
+www.thebuzzz.com.au
 """
 // ----------------------------------------------------------------------------------------------
 
 // MARK: - TEXTS
 
 // MARK: Texts in About Us Screen
-let aboutSocialLinksText = "CONNECT WITH THE BEE"
+let aboutSocialLinksText = "This is where Classic Hits live!" //"CONNECT WITH THE BEE"
 let aboutUsText = "ABOUT THE BEE"
 
 // MARK: Texts in Sleep Timer Screen

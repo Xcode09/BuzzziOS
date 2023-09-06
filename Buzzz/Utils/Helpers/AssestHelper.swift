@@ -13,6 +13,8 @@ class AssetsHelper {
         case PlayPauseButton = "PlayPauseButton"
         case PlayPauseButtonBg = "PlayPauseButtonBg"
         case ActionButton = "ActionButton"
+        case HeaderColor = "HeaderColor"
+        case AccentColor = "AccentColor"
     }
     
 }

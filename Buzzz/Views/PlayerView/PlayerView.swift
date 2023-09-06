@@ -7,159 +7,137 @@
 
 import SwiftUI
 
+struct SelectedURL:Identifiable{
+    var id = UUID().uuidString
+    let url:String
+}
 
 struct PlayerView: View {
     // MARK: - PROPERTIES
     @EnvironmentObject var playerViewModel: PlayerViewModel
     @State var adsFlag = false
-    
+    @State var isMenuOpen = false
+    @State var selectMenuItem : MenuItems?
+    @State var isShare  = false
+    private var defualtOffset = (UIScreen.main.bounds.width)
     // MARK: - VIEW
     var body: some View {
-        
-        ZStack(alignment: .bottom) {
-            
-            VStack(alignment: .center, spacing: 10) {
+        ZStack{
+            VStack{
+                if selectMenuItem == .infoContact {
+                    VStack(spacing: 10){
+                        Spacer().frame(height:50)
                         
-                // MARK: Album Logo Section
-                Image("logo")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: artworkSize, height: artworkSize, alignment: .center)
-                    .modifier(LogoModifier())
-                
-                
-//                if (self.playerViewModel.track.artworkURL != nil) {
-//                    ImageLoaderView(imageUrl: self.playerViewModel.track.artworkURL!)
-//                        .frame(width: artworkSize, height: artworkSize, alignment: .center)
-//                    .background(
-//                        Circle()
-//                            .fill(Color("ColorOffWhiteAdaptive"))
-//                            .shadow(color: Color("ColorOffWhiteShadowFinishAdaptive"), radius: 10, x: 10, y: 10)
-//
-//                    )
-//                } else {
-//                    Image("logo")
-//                        .resizable()
-//                        .scaledToFill()
-//                        .frame(width: artworkSize, height: artworkSize, alignment: .center)
-//                        .modifier(LogoModifier())
-//                }
-                
-                VStack{
-                    HStack{
-                        Circle().fill(.red)
-                            .frame(width: 20,height: 20)
-                        Text("LIVE")
+                        Text(aboutSocialLinksText)
+                            .frame(maxWidth: .infinity,alignment:.center)
+                            .foregroundColor(.black)
+                            .font(.system(size: 24,weight: .black))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.7)
+                            
                         
-                    }
-                    // MARK: Radio Station Name
-                    // config file: station_title
-                    Text(playerViewModel.station.title)
-                        .font(.system(.headline, design: .default))
-                        .fontWeight(.semibold)
-                        .padding(.horizontal, 10)
-                        .multilineTextAlignment(.center)
-                    
-                    // MARK: Radio Station Description
-                    // config file: station_desc
-                    Text(playerViewModel.station.desc)
-                        .font(.system(.caption, design: .default))
-                        .fontWeight(.light)
-                        .padding(.horizontal, 10)
-                        .multilineTextAlignment(.center)
-                }
-                .padding(.top,30)
-                
-                Spacer()
-                if !self.playerViewModel.track.metaTitle().isEmpty {
-                    HStack{
-                        Image(systemName: "mic")
                         
-                        Text("Now Playing")
-                            .foregroundColor(.gray)
+                        Text(about_us_text)
+                            .frame(maxWidth: .infinity,alignment:.center)
+                            .foregroundColor(.black)
+                            .font(.system(size: 14,weight: .bold))
+                            .minimumScaleFactor(0.6)
+                            .multilineTextAlignment(.center)
+                            
+                        
+                        Image("logo")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 100, height: 100, alignment: .center)
+                            .modifier(LogoModifier())
+
+
+                        Spacer()
+                            //.frame(height: 30)
                     }
-                }
-                // MARK: Song Title
-                Text(self.playerViewModel.track.metaTitle())
-                    .font(.system(.body, design: .default))
-                    .fontWeight(.light)
-                
-//                // MARK: Radio Station Name
-//                // config file: station_title
-//                Text(playerViewModel.station.title)
-//                    .font(.system(.title, design: .rounded))
-//                    .fontWeight(.semibold)
-//                    .padding(.horizontal, 10)
-//                    .multilineTextAlignment(.center)
-                
-//                // MARK: Radio Station Description
-//                // config file: station_desc
-//                Text(playerViewModel.station.desc)
-//                    .font(.system(.caption, design: .rounded))
-//                    .fontWeight(.light)
-//                    .padding(.horizontal, 10)
-//                    .multilineTextAlignment(.center)
-                
-                Spacer()
+                    .padding(.horizontal,8)
                     
-//                HStack(alignment: .center, spacing: 20) {
-//                    if(showRecordingFeature) {
-//                        RecordingButton(size: 30)
-//                    }
-//                    if(showSleepTimerFeature) {
-//                        SleepButton(size: 30)
-//                    }
+                    //PlayerControlView(selectMenu: $selectMenuItem)
                     
-                
-                HStack(alignment: .center, spacing: 40) {
-                    //ShareButton(size: 30)
+                }else {
+                    VStack(alignment: .center, spacing: 10) {
+                        Spacer()
+                        // MARK: Album Logo Section
+                        Image("logo")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: artworkSize, height: artworkSize, alignment: .center)
+                            .modifier(LogoModifier())
+                        
+                        Spacer()
+                        //PlayerControlView(selectMenu: $selectMenuItem)
+                        
+       
+                    } // VStack
+                    .padding(.vertical, showAds ? 0 : 20)
                     
-//                }
-                    Spacer().frame(width: 30)
                     
-                    // MARK: Pause/Resume
-                    if(playerViewModel.isLoading) {
-                        ActivityIndicator()
-                            .frame(width:90, height: 90)
-                            .foregroundColor(Color(AssetsHelper.Colors.PlayPauseButton.rawValue))
-                    } else {
-                        PlayButton()
-                            .offset(y:-40)
-                    }
                     
-                    InfoButton(size: 30)
+                        
                 }
                 
-                // Control the volume
-                VolumeSlider()
-                    .frame(height: 20)
-                    .padding(.horizontal)
                 
                 
-//                if adsFlag && showAds {
-//                    BannerVC()
-//                        .frame(width: GADAdSizeBanner.size.width, height: GADAdSizeBanner.size.height, alignment: .center)
-//                }
-            } // VStack
-                .padding(.vertical, showAds ? 0 : 20)
-            
-            
-        } // ZStack
-        .frame(minWidth: 0,
-                maxWidth: .infinity,
-                minHeight: 0,
-                maxHeight: .infinity,
-                alignment: .topLeading
-        )
-        .background(
-            VStack {
-                Image("bg1")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all)
-                    .opacity(0.3)
             }
-        )
+            .frame(maxWidth: .infinity,maxHeight: .infinity)
+            .background(
+                getViewBaseOnMenu()
+            )
+            .overlay(alignment:.top,content: {
+                headerView
+            })
+            .overlay(alignment:.bottom,content: {
+                PlayerControlView(selectMenu: $selectMenuItem)
+                    //.edgesIgnoringSafeArea(.all)
+            })
+            
+            MenuView(isOpenMenu: $isMenuOpen, selectedItem: $selectMenuItem)
+                .offset(x:isMenuOpen ? 0 : -defualtOffset,y: 56)
+                .onChange(of: selectMenuItem) { newValue in
+                    switch newValue {
+                    case .songRequest:
+                        //isSafariView = .init(url: "https://thebuzzz.com.au/cindy-daz")
+                        
+                        UIApplication.shared.open(.init(string: "https://thebuzzz.com.au/cindy-daz")!)
+                        
+                    case .stationWebsite:
+                        //isSafariView = .init(url: "https://thebuzzz.com.au")
+                        
+                        UIApplication.shared.open(.init(string: "https://thebuzzz.com.au")!)
+                    case .Facebook:
+                        //isSafariView = .init(url: "https://facebook.com/thebuzzzradioonline")
+                        
+                        UIApplication.shared.open(.init(string: "https://facebook.com/thebuzzzradioonline")!)
+                        
+                    case .Instgram:
+                        //isSafariView = .init(url: "https://instagram.com/buzzz.radio")
+                        
+                        UIApplication.shared.open(.init(string: "https://instagram.com/buzzz.radio")!)
+             
+                    case .joinHive:
+                        //isSafariView = .init(url: "https://thebuzzz.com.au/contact-us")
+                        UIApplication.shared.open(.init(string: "https://thebuzzz.com.au/contact-us")!)
+
+                    case .adversite:
+                        
+                        //isSafariView = .init(url: "https://thebuzzz.com.au/advertizzze")
+                        
+                        UIApplication.shared.open(.init(string: "https://thebuzzz.com.au/advertizzze")!)
+                        
+                    case .share:
+                        isShare.toggle()
+            
+                    default:
+                        break;
+                    }
+                }
+        }
+        .frame(maxWidth: .infinity,maxHeight: .infinity)
         .onAppear {
             playerViewModel.station = Station(title: station_title, streamURL: station_streamURL, desc: station_desc)
             DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
@@ -171,9 +149,77 @@ struct PlayerView: View {
         .onDisappear {
             playerViewModel.stopPlaying()
         }
+        .sheet(isPresented: $isShare) {
+                if #available(iOS 16.0, *) {
+                    
+                    ActivityViewController(activityItems: [URL(string: "https://thebuzzz.com.au")!]).presentationDetents([.medium])
+                } else {
+                    // Fallback on earlier versions
+                    ActivityViewController(activityItems: [URL(string: "https://thebuzzz.com.au")!])
+                }
+        }
+    }
+    
+    
+    
+    var headerView:some View
+    {
+        HStack{
+            Button {
+                withAnimation {
+                    isMenuOpen.toggle()
+                }
+                
+            } label: {
+                Image(systemName: "line.3.horizontal")
+                    .resizable()
+                    .frame(width: 20,height: 20)
+                    .scaledToFill()
+                
+                
+            }
+            .foregroundColor(.white)
+            Spacer()
+            Text(selectMenuItem == .infoContact ? selectMenuItem?.title ?? "" : "Live Stream")
+                .foregroundColor(.white)
+                .font(.title3)
+                .bold()
+            
+            Spacer()
+
+        }
+        .padding()
+        .frame(height: 56)
+        .background {
+            Color(AssetsHelper.Colors.HeaderColor.rawValue).ignoresSafeArea()
+        }
+        .overlay(alignment:.bottom){
+            Divider().frame(height:6).overlay {
+                Color.white
+            }
+        }
         
     }
+    
+    func getViewBaseOnMenu()-> some View{
+        
+        if selectMenuItem == .infoContact {
+            return AnyView(Color.white)
+        }else{
+            return AnyView(VStack {
+                Image("bg1")
+                    .resizable()
+                    .frame(height:UIScreen.main.bounds.height * 0.8)
+                    .scaledToFit()
+                    //.offset(y:30)
+                    //.aspectRatio(contentMode: .fill)
+                    //.edgesIgnoringSafeArea(.top)
+            })
+        }
+    }
 }
+
+
 
 struct PlayerView_Previews: PreviewProvider {
     static var previews: some View {
