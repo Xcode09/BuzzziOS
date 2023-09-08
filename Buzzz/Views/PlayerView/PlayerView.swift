@@ -26,25 +26,26 @@ struct PlayerView: View {
             VStack{
                 if selectMenuItem == .infoContact {
                     VStack(spacing: 10){
+                    
                         Spacer().frame(height:50)
-                        
+
                         Text(aboutSocialLinksText)
                             .frame(maxWidth: .infinity,alignment:.center)
                             .foregroundColor(.black)
                             .font(.system(size: 24,weight: .black))
                             .lineLimit(1)
                             .minimumScaleFactor(0.7)
-                            
-                        
-                        
+
+
+
                         Text(about_us_text)
                             .frame(maxWidth: .infinity,alignment:.center)
                             .foregroundColor(.black)
                             .font(.system(size: 14,weight: .bold))
                             .minimumScaleFactor(0.6)
                             .multilineTextAlignment(.center)
-                            
-                        
+
+
                         Image("logo")
                             .resizable()
                             .scaledToFill()
@@ -53,16 +54,16 @@ struct PlayerView: View {
 
 
                         Spacer()
-                            //.frame(height: 30)
+                            
                     }
-                    .padding(.horizontal,8)
+                    .padding(.horizontal,12)
                     
                     //PlayerControlView(selectMenu: $selectMenuItem)
                     
                 }else {
                     VStack(alignment: .center, spacing: 10) {
                         Spacer()
-                        // MARK: Album Logo Section
+                    
                         Image("logo")
                             .resizable()
                             .scaledToFill()
@@ -93,6 +94,7 @@ struct PlayerView: View {
             })
             .overlay(alignment:.bottom,content: {
                 PlayerControlView(selectMenu: $selectMenuItem)
+                    .frame(height:100)
                     //.edgesIgnoringSafeArea(.all)
             })
             

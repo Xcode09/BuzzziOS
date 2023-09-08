@@ -30,7 +30,7 @@ let station_desc = "Classic Hits Radio."
 // ----------------------------------------------------------------------------------------------
 // MARK: MAIN Screen
 // Artwork Album Photo Size
-let artworkSize:CGFloat = 250
+let artworkSize:CGFloat = 270
 
 // Show background image
 // Show image in the player background, it is optional. You can set true to enable, false to disable it.
@@ -87,11 +87,11 @@ let whatsapp_number = ""
 
 // About Us
 let about_us_text = """
-The buzz is Melbourne's home for classic hits from the 70s, 80s & 90s.
+The buzzz is Melbourne's home for classic hits from the 70s, 80s & 90s.
 
 A member of B Radio Network, the largest radio station network in Australia, we stream the iconic sounds 24/7 of Queen, ABBA, the Stones, Kiss, Skyhooks and the Eagles from the 70s;
 Springsteen, Madonna, Huey & his News, The Purple One and Billy Idol from the decade simply known as "the 80s"; and the unmistakeable sounds of the 90s - think
-*Radiohead, Ace of Base, Foo Fighters, Goo Goo Dolls, Spin Doctors and Matchbox 20!
+Radiohead, Ace of Base, Foo Fighters, Goo Goo Dolls, Spin Doctors and Matchbox 20!
 
 Thanks for buzzing on by!
 

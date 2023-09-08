@@ -13,146 +13,37 @@ struct PlayerControlView: View {
     @State var volumne = 1.0
     @Binding var selectMenu : MenuItems?
     
-//    init() {
-//            let thumbImage = UIImage(systemName: "circle.fill")
-//            UISlider.appearance().setThumbImage(thumbImage, for: .normal)
-//        }
     var body: some View {
-        VStack(spacing:20){
-//                VStack(spacing:10){
-//                    Spacer().frame(height: 5.0)
-//
-//                    ProgressView(value: 0.5,total: 1.0)
-//                        .accentColor(Color(AssetsHelper.Colors.AccentColor.rawValue))
-//                    HStack{
-//                        Text("--:--")
-//                            .bold()
-//
-//                        Spacer()
-//
-//                        Text("--:--")
-//                            .bold()
-//                    }
-//                }
-            
-            HStack(spacing:20){
-//                    Image(systemName: "bell")
-//
-//                    Spacer()
-//
-//                    Image(systemName: "hand.thumbsup")
-                Spacer()
-                PlayButton(playerViewModel: _playerViewModel)
-                Spacer()
-//                    Image(systemName: "hand.thumbsdown")
-//
-//                    Spacer()
-//
-//                    Image(systemName: "ellipsis")
-            }
-            
-            Text(playerViewModel.track.title)
-                .font(.system(size: 22,weight: .bold))
+        VStack(spacing:10){
+            PlayButton(playerViewModel: _playerViewModel)
+                .padding(.top,10)
+                .frame(width:46,height: 46)
             
             Text(playerViewModel.track.artist)
                 .font(.system(size: 22,weight: .bold))
             
-            //Spacer().frame(height:30)
+            Spacer().frame(height:10)
             
-            HStack{
-                Image(systemName: "speaker.wave.2")
-                
-//                    VolumeSlider()
-//                        .frame(height: 20)
-//                        .accentColor(Color(AssetsHelper.Colors.AccentColor.rawValue))
+            Text(playerViewModel.track.title)
+                .font(.system(size: 22,weight: .bold))
+            HStack {
+                Image(systemName:"speaker.wave.2")
                 
                 Slider(value: $volumne) { done in
                     MPVolumeView.setVolume(Float(volumne))
                 }
-                .accentColor(Color(AssetsHelper.Colors.AccentColor.rawValue))
                 
-                //Image(systemName: "airplayaudio")
                 
-            }
-            //.padding(.bottom,15)
+            }.padding(.bottom,20)
             
-            
-//                HStack{
-//                    Image(systemName: "play.circle.fill")
-//                        .frame(width:20,height: 20)
-//
-//                    Spacer()
-//                    Image(systemName: "bell")
-//                        .frame(width:20,height: 20)
-//                    Spacer()
-//
-//                    Image(systemName: "speaker.wave.2")
-//                        .frame(width:20,height: 20)
-//
-//                    Spacer()
-//                    Image(systemName: "info.circle")
-//                        .frame(width:20,height: 20)
-//
-//                }
-//                .padding(.bottom,15)
-//                .padding(.horizontal)
-        }
-        .padding()
-        .background {
-            RoundedRectangle(cornerRadius: 10)
-                .fill(Color(uiColor: .systemBackground))
-        }
-        
-    }
-    
-    var smallView:some View
-    {
-        VStack(spacing:10){
-            ZStack{
-                Color.gray.opacity(0.7)
-                    .frame(maxWidth: .infinity,maxHeight: .infinity)
-                VStack{
-                    
-                    Image(systemName: "line.3.horizontal")
-                        .resizable()
-                        .frame(width: 20,height: 20)
-                        .scaledToFill()
-                        .padding(.top)
-                    
-                    HStack {
-                        Image("logo")
-                            .resizable()
-                            .frame(width: 40,height: 40)
-                            .scaledToFill()
-                        
-                        Spacer()
-                        
-                        Text(playerViewModel.track.title)
-                            .font(.system(size: 22,weight: .bold))
-                        Spacer()
-                        
-                        PlayButton(playerViewModel: _playerViewModel, small: true)
-                    }
-                }
-                .padding()
-            }
-        
             Spacer()
             
-            HStack{
-                Image(systemName: "speaker.wave.2")
-                
-                Slider(value: $volumne) { done in
-                    MPVolumeView.setVolume(Float(volumne))
-                }
-                .accentColor(Color(AssetsHelper.Colors.AccentColor.rawValue))
-                
-                Image(systemName: "airplayaudio")
-                
-            }
-            
         }
-        
+        .padding(.horizontal)
+         .background {
+             RoundedRectangle(cornerRadius: 10)
+                 .fill(Color(uiColor: .systemBackground))
+         }
     }
 }
 
