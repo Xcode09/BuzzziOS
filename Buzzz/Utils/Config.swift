@@ -87,15 +87,22 @@ let whatsapp_number = ""
 
 // About Us
 let about_us_text = """
-The buzzz is Melbourne's home for classic hits from the 70s, 80s & 90s.
+The buzzz is Melbourne’s home for classic hits
+from the 70s, 80s & 90s.
 
-A member of B Radio Network, the largest radio station network in Australia, we stream the iconic sounds 24/7 of Queen, ABBA, the Stones, Kiss, Skyhooks and the Eagles from the 70s;
-Springsteen, Madonna, Huey & his News, The Purple One and Billy Idol from the decade simply known as "the 80s"; and the unmistakeable sounds of the 90s - think
-Radiohead, Ace of Base, Foo Fighters, Goo Goo Dolls, Spin Doctors and Matchbox 20!
+A member of B Radio Network, the largest radio
+station network in Australia, we stream the iconic
+sounds 24/7 of Queen, ABBA, Rolling Stones,
+Kiss, and the Eagles from the 70s;
+Bruce Springsteen, Madonna, Michael Jackson,
+Prince and Billy Idol from the decade simply
+known as “the 80s”;
+and the unmistakeable sounds of the 90s –
+think Radiohead, Ace of Base,
+Goo Goo Dolls, Rockmelons, Foo Fighters,
+Spin Doctors and 4 Non Blondes.
 
-Thanks for buzzing on by!
-
-www.thebuzzz.com.au
+Thanks for buzzzing on by!
 """
 // ----------------------------------------------------------------------------------------------
 

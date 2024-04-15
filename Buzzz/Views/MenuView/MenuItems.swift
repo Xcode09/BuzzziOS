@@ -14,7 +14,7 @@ enum MenuItems:String, Identifiable,CaseIterable
     case songRequest
     case stationWebsite
     case Facebook
-    case Instgram
+    //case Instgram
     case joinHive
     case adversite
     case share
@@ -33,8 +33,8 @@ enum MenuItems:String, Identifiable,CaseIterable
             return "Station website"
         case .Facebook:
             return "Facebook"
-        case .Instgram:
-            return "Instagram"
+//        case .Instgram:
+//            return "Instagram"
         case .joinHive:
             return "Join the Hive"
         case .adversite:

@@ -14,31 +14,16 @@ struct PlayButton: View {
     var small: Bool = false
     // MARK: - VIEW
     var body: some View {
-        if small {
-            Button(action: {
-                self.playerViewModel.togglePlaying()
-            }) {
-                Image(systemName: playerViewModel.isPlaying ? "pause" : "play.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width:10, height:10)
-                    .foregroundColor(Color.white)
-                    .padding(8)
-                    .modifier(PlayerControllerButtonModifier())
-            }
-            
-        }else{
-            Button(action: {
-                self.playerViewModel.togglePlaying()
-            }) {
-                Image(systemName: playerViewModel.isPlaying ? "pause" : "play.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width:15, height:15)
-                    .foregroundColor(Color.white)
-                    .padding(15)
-                    .modifier(PlayerControllerButtonModifier())
-            }
+        Button(action: {
+            self.playerViewModel.togglePlaying()
+        }) {
+            Image(playerViewModel.isPlaying ? "pause-button" : "play-button")
+                .resizable()
+                .scaledToFill()
+                .frame(width:15, height:15)
+//                    .foregroundColor(Color.white)
+//                    .padding(15)
+//                    .modifier(PlayerControllerButtonModifier())
         }
        
     }

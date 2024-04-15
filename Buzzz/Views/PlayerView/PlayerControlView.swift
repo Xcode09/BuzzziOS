@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import MediaPlayer
+
 
 struct PlayerControlView: View {
     @EnvironmentObject var playerViewModel: PlayerViewModel
@@ -15,33 +15,50 @@ struct PlayerControlView: View {
     
     var body: some View {
         VStack(spacing:10){
-            PlayButton(playerViewModel: _playerViewModel)
-                .padding(.top,10)
-                .frame(width:46,height: 46)
+            HStack{
+                Image("logo")
+                    .resizable()
+                    .frame(width:50,height: 50)
+                    .aspectRatio(contentMode: .fill)
+                
+                Spacer()
+                
+                VStack(spacing: 1){
+                    Text(playerViewModel.track.artist)
+                        .font(.system(size: 18,weight: .bold))
+                    
+                    Text(playerViewModel.track.title)
+                        .font(.system(size: 18,weight: .bold))
+                }
+                Spacer()
+                
+                Button(action: {
+                    self.playerViewModel.togglePlaying()
+                }) {
+                    Image(playerViewModel.isPlaying ? "pause-button" : "play-button")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                }
+                .frame(width:40, height:40)
+            }
             
-            Text(playerViewModel.track.artist)
-                .font(.system(size: 22,weight: .bold))
-            
-            Spacer().frame(height:10)
-            
-            Text(playerViewModel.track.title)
-                .font(.system(size: 22,weight: .bold))
             HStack {
                 Image(systemName:"speaker.wave.2")
                 
-                Slider(value: $volumne) { done in
-                    MPVolumeView.setVolume(Float(volumne))
-                }
+//                Slider(value: $volumne) { done in
+//                    MPVolumeView.setVolume(Float(volumne))
+//                }
                 
+                 VolumeSlider()
+                    .frame(height: 20)
+                       //.padding(.horizontal)
+                    //.offset(y:-8)
                 
-            }.padding(.bottom,20)
-            
-            Spacer()
-            
+            }
         }
-        .padding(.horizontal)
+        .padding()
          .background {
-             RoundedRectangle(cornerRadius: 10)
+             Rectangle()
                  .fill(Color(uiColor: .systemBackground))
          }
     }
@@ -52,7 +69,6 @@ struct PlayerControlView_Previews: PreviewProvider {
         PlayerControlView(selectMenu: .constant(.liveStation))
     }
 }
-
 
 
 

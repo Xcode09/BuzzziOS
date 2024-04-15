@@ -26,39 +26,43 @@ struct PlayerView: View {
             VStack{
                 if selectMenuItem == .infoContact {
                     VStack(spacing: 10){
-                    
-                        Spacer().frame(height:50)
-
+                        //Spacer().frame(height:40)
+                        
                         Text(aboutSocialLinksText)
                             .frame(maxWidth: .infinity,alignment:.center)
                             .foregroundColor(.black)
-                            .font(.system(size: 24,weight: .black))
+                            .font(.system(size: 20,weight: .bold))
                             .lineLimit(1)
-                            .minimumScaleFactor(0.7)
-
-
-
+                        
                         Text(about_us_text)
+//                            .padding(.horizontal)
                             .frame(maxWidth: .infinity,alignment:.center)
                             .foregroundColor(.black)
-                            .font(.system(size: 14,weight: .bold))
+                            .font(.system(size: 16,weight: .regular))
                             .minimumScaleFactor(0.6)
                             .multilineTextAlignment(.center)
-
-
+                        
+                        Text("https://thebuzzz.com.au")
+                            .font(.system(size: 16,weight: .regular))
+                            .foregroundColor(.blue)
+                            .underline()
+                        
                         Image("logo")
                             .resizable()
                             .scaledToFill()
                             .frame(width: 100, height: 100, alignment: .center)
                             .modifier(LogoModifier())
-
-
-                        Spacer()
+                        
+                         // Underline the text
+                        
+                        Spacer().frame(height:20)
                             
                     }
                     .padding(.horizontal,12)
                     
-                    //PlayerControlView(selectMenu: $selectMenuItem)
+                    PlayerControlView(selectMenu: $selectMenuItem)
+                        .frame(height:80)
+                        .offset(y:35)
                     
                 }else {
                     VStack(alignment: .center, spacing: 10) {
@@ -71,7 +75,10 @@ struct PlayerView: View {
                             .modifier(LogoModifier())
                         
                         Spacer()
-                        //PlayerControlView(selectMenu: $selectMenuItem)
+                        
+                        PlayerControlView(selectMenu: $selectMenuItem)
+                            .frame(height:80)
+                            .offset(y:-25)
                         
        
                     } // VStack
@@ -92,12 +99,12 @@ struct PlayerView: View {
             .overlay(alignment:.top,content: {
                 headerView
             })
-            .overlay(alignment:.bottom,content: {
-                PlayerControlView(selectMenu: $selectMenuItem)
-                    .frame(height:100)
-                    //.edgesIgnoringSafeArea(.all)
-            })
-            
+//            .overlay(alignment:.bottom,content: {
+//                PlayerControlView(selectMenu: $selectMenuItem)
+//                    //.frame(height:100)
+//                    //.edgesIgnoringSafeArea(.all)
+//            })
+//
             MenuView(isOpenMenu: $isMenuOpen, selectedItem: $selectMenuItem)
                 .offset(x:isMenuOpen ? 0 : -defualtOffset,y: 56)
                 .onChange(of: selectMenuItem) { newValue in
@@ -116,10 +123,10 @@ struct PlayerView: View {
                         
                         UIApplication.shared.open(.init(string: "https://facebook.com/thebuzzzradioonline")!)
                         
-                    case .Instgram:
-                        //isSafariView = .init(url: "https://instagram.com/buzzz.radio")
-                        
-                        UIApplication.shared.open(.init(string: "https://instagram.com/buzzz.radio")!)
+//                    case .Instgram:
+//                        //isSafariView = .init(url: "https://instagram.com/buzzz.radio")
+//                        
+//                        UIApplication.shared.open(.init(string: "https://instagram.com/buzzz.radio")!)
              
                     case .joinHive:
                         //isSafariView = .init(url: "https://thebuzzz.com.au/contact-us")
@@ -211,9 +218,9 @@ struct PlayerView: View {
             return AnyView(VStack {
                 Image("bg1")
                     .resizable()
-                    .frame(height:UIScreen.main.bounds.height * 0.8)
-                    .scaledToFit()
-                    //.offset(y:30)
+                    .scaledToFill()
+                    .ignoresSafeArea()
+                    .offset(y:30)
                     //.aspectRatio(contentMode: .fill)
                     //.edgesIgnoringSafeArea(.top)
             })
