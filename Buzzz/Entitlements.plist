@@ -5,6 +5,6 @@
 	<key>application-identifier</key>
 	<string>$(AppIdentifierPrefix)$(CFBundleIdentifier)</string>
 	<key>com.apple.developer.carplay-audio</key>
-	<false/>
+	<true/>
 </dict>
 </plist>
