@@ -2,7 +2,7 @@
 //  PlayerControlView.swift
 //  Buzzz
 //
-//  Created by Berisco Pvt on 23/08/2023.
+//  Created by Ali on 23/08/2023.
 //
 
 import SwiftUI

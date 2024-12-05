@@ -2,7 +2,7 @@
 //  SplashView.swift
 //  Buzzz
 //
-//  Created by Berisco Pvt on 06/09/2023.
+//  Created by Ali on 06/09/2023.
 //
 
 import SwiftUI
